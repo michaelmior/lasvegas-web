@@ -5,6 +5,8 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Table of Contents
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/michaelmior/lasvegas-web.svg?token=0bc9e23468259ce8cc7f88df30ad33275cd57eb31abb042b7f3135a0dbc4d8b4&ts=1514854671246)](https://greenkeeper.io/)
+
 - [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)
 - [Folder Structure](#folder-structure)
