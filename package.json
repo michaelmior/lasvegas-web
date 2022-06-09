@@ -1,7 +1,11 @@
 {
   "name": "lasvegas-web",
+  "author": "Michael Mior <michael.mior@gmail.com>",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/michaelmior/lasvegas-web",
+  "repository": "https://github.com/michaelmior/lasvegas-web",
+  "bugs": "https://github.com/michaelmior/lasvegas-web/issues",
   "dependencies": {
     "boardgame.io": "^0.15.0",
     "lodash": "^4.17.13",
@@ -10,9 +14,50 @@
     "react-scripts": "1.0.17"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow check src",
+    "lint": "node_modules/.bin/prettier --check src/**/*.{js,json} && eslint --ext .js . && npmPkgJsonLint -q . && pkg-ok && markdownlint *.md",
+    "postinstall": "husky install",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "lint-staged": {
+    "src/**/*.{js,json}": [
+      "eslint --fix",
+      "flow focus-check",
+      "prettier --write"
+    ],
+    "src/**/*.css": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "package.json": [
+      "npmPkgJsonLint -q .",
+      "pkg-ok"
+    ],
+    "README.md": [
+      "markdownlint -f"
+    ]
+  },
+  "devDependencies": {
+    "flow-bin": "^0.179.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
+    "markdownlint-cli": "^0.31.1",
+    "npm-package-json-lint": "^6.3.0",
+    "npm-package-json-lint-config-default": "^5.0.0",
+    "pkg-ok": "^3.0.0",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.9.0",
+    "stylelint-config-standard": "^26.0.0"
   }
 }

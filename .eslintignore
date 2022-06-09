@@ -1,0 +1,5 @@
+# Ignore json files
+build/
+node_modules/
+src/resources/*
+!.github
